@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/cataloguetheme.dart';
 import 'pages/homepage.dart';
 import 'pages/login_page.dart';
 void main(){
@@ -12,15 +13,8 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     // bringVegetables(true,onions: 109,rupees: 200); // Moved or removed side-effect
     return MaterialApp(
-      theme: ThemeData(
-        brightness:Brightness.light,
-        primarySwatch: Colors.blue, 
-      ),
-      darkTheme: ThemeData(
-        brightness:Brightness.dark,
-        primarySwatch: Colors.green,
-        primaryColor: Colors.green,
-      ),
+      theme: CatalogueTheme().lightTheme(context),
+      darkTheme: CatalogueTheme().darkTheme(context),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       // home: HomePage(),
